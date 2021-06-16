@@ -33,10 +33,10 @@
       </feature>
     </config-file>
 
-    <source-file src="src/AntiTamperingPlugin.java" target-dir="src/Neux/cordova/AntiTampering" />
-    <source-file src="src/AssetsIntegrity.java" target-dir="src/Neux/cordova/AntiTampering" />
-    <source-file src="src/DebugDetection.java" target-dir="src/Neux/cordova/AntiTampering" />
-    <source-file src="src/TamperingException.java" target-dir="src/Neux/cordova/AntiTampering" />
+    <source-file src="src/android/AntiTamperingPlugin.java" target-dir="src/Neux/cordova/AntiTampering" />
+    <source-file src="src/android/AssetsIntegrity.java" target-dir="src/Neux/cordova/AntiTampering" />
+    <source-file src="src/android/DebugDetection.java" target-dir="src/Neux/cordova/AntiTampering" />
+    <source-file src="src/android/TamperingException.java" target-dir="src/Neux/cordova/AntiTampering" />
 
   </platform>
 
