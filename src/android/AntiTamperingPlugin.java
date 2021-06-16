@@ -1,4 +1,4 @@
-package com.duddu.antitampering;
+package Neux.cordova.AntiTampering;
 
 import android.app.Activity;
 
