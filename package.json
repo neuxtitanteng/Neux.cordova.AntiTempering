@@ -1,0 +1,45 @@
+{
+  "name": "cordova-plugin-antitampering",
+  "version": "0.4.2",
+  "description": "Verify the integrity of cordova static assets - Android / iOS",
+  "author": "duddu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duddu/cordova-plugin-antitampering"
+  },
+  "cordova": {
+    "id": "cordova-plugin-antitampering",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova",
+    "anti-tampering",
+    "tampering",
+    "security"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^7.1.0",
+    "colors": "^1.3.0",
+    "eslint": "^6.4.0",
+    "jszip": "^3.2.0",
+    "mocha": "^6.2.0",
+    "wd": "^1.11.4"
+  },
+  "scripts": {
+    "lint": "eslint \"+(scripts|tests|www)/**/*.js\"",
+    "sign-tampered-apk": "jarsigner -verbose -keystore $HOME/.android/debug.keystore -storepass android -keypass android $TRAVIS_BUILD_DIR/tests/android-tampered.apk androiddebugkey",
+    "tamper-android": "node tests/tamper/android.js && npm run sign-tampered-apk",
+    "zip-ios-pristine-app": "cd $IOS_BUILD_DIR && zip -r $TRAVIS_BUILD_DIR/tests/ios.zip HelloWorld.app",
+    "tamper-ios": "npm run zip-ios-pristine-app && node tests/tamper/ios.js && cd $IOS_BUILD_DIR && zip -r $TRAVIS_BUILD_DIR/tests/ios-tampered.zip HelloWorld.app",
+    "appium-android": "mocha tests/appium/android.js",
+    "appium-ios": "mocha tests/appium/ios.js"
+  }
+}
