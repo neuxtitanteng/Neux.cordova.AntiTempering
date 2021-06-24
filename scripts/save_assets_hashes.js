@@ -33,7 +33,7 @@ module.exports = function (context) {
     // if (!extensions.length) {
     //     return null;
     // }
-    return new RegExp('.*\.(' + '.DS_Store' + ')$');
+    return new RegExp('.*\.(' + 'DS_Store' + ')$');
   }
 
   function getPlatformAssets(dir) {
